@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> {% block title%} This is Header so u wont see it {% endblock%} </title>
+        <h1>Camping Overload</h1>
+
+    {% if request.user.is_authenticated %}
+        <p>Hey {{request.user.username}} | <a href="{% url 'logout' %}"> Logout</a></p>
+    
+    {% else %}
+        <p><a href="{% url 'register' %}"> Register</a> | <a href="#">Login</a></p>
+    {% endif %}
+
+    <hr>
+</head>
+<body>
+ 
+<!-- this is the code snippet which helps in resuing the code -->
+ {%include 'nav.html' %}   
+    <main>
+        {%block content%}
+        {%endblock%}
+    </main>
+</body>
+
+<footer>
+    <hr>
+    <h2>Sahil Sahil | 2021</h2>
+</footer>
+</html>

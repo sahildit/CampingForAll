@@ -1,10 +1,9 @@
 {% extends 'base.html'%}
 
-{% block title%} Register {% endblock%}
+{% block title%} Login {% endblock%}
 
 {%block content%}
-
-
+<!-- bootstrap Signin example theme -->
 <style type="text/css">
     .form-signin {
         width: 100%;
@@ -40,19 +39,13 @@
 
 <form class="form-signin" method="post">
     {% csrf_token %}
-    <h1 class="h3 mb-3 fw-normal">Register</h1>
+    <h1 class="h3 mb-3 fw-normal">Log in</h1>
     <label for="inputEmail" class="visually-hidden">Email address</label>
     <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-
-    <input type="text" name="username" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
-
     <label for="inputPassword" class="visually-hidden">Password</label>
-    <input type="password1" name="password1" id="inputPassword1" class="form-control" placeholder="Password" required>
+    <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
 
-    <input type="password2" name="password2" id="inputPassword2" class="form-control" placeholder="ConfirmPassword" required>
-
-
-        {% for field in registration_form %}
+        {% for field in login_form %}
             <p>
                 {% for error in field.errors %}
                     <p style="color: darkred;"> {{error}}</p>
@@ -60,44 +53,14 @@
             </p>  
         {% endfor %}
 
-        {% if registration_form.non_field_errors %}
+        {% if login_form.non_field_errors %}
             <div style="color: brown;">
-                <p>{{registration_form.non_field_errors}}</p>
+                <p>{{login_form.non_field_errors}}</p>
             </div>
         {% endif %}
 
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Register</button>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Log in</button>
   </form>
 
-
-
-
-
-
-<!-- <h2>Register</h2>
-<form method="post"> -->
-    <!-- thats used for making the form to work properly -->
-    <!-- {% csrf_token %}
-
-    {% for field in registration_form %}
-        <p>
-            {{field.label_tag}}
-            {{field}}
-
-            {% if field.help_text %}
-                <small>{{field.help_text}}</small>
-            {% endif %}
-
-            {% for error in field.errors %}
-                <p style="color: darkred;"> {{error}}</p>
-            {% endfor %}    
-
-        </p>
-    {% endfor %} -->
-
-
-    <!-- <button type="submit">Register</button>
-
-</form> -->
 
 {%endblock content%}

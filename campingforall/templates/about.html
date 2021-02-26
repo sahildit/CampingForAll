@@ -1,9 +1,40 @@
 {% extends 'base.html'%}
+{% load static %}
 
 {% block title%} About {% endblock%}
 
 {%block content%}
-<h1>
-About
-</h1>
+<div class="container" >
+    <div class="row">
+       <div class="col-12 col-md-6 about_text animate__animated animate__fadeIn animate__slower">
+          <h2>About Us: Camping Overload</h2>
+          <p>Camping is an outdoor activity involving overnight stays away from home in a shelter, such as tent or
+            a recreational vehicle. Typically, participants leave developed areas to spend time outdoors in more
+            natural ones in pursuit of activities providing them enjoyment. The night spent outdoors
+            distinguishes camping from day-tripping, picnicking, and other recreational activities</p>
+          <p>Motor Homes or campervans is a self-propelled vehicle that provides both transport and
+            accommodation. The term mainly describes vans that have been fitted out, often with coach-built
+            body for use as accommodation. They usually have sleeping spaces for 2-8 people. Each sleeping
+            space is either fixed or converts from another part of motorhome interior, usually a fold-out sofa.
+            Kitchen area contains cooking equipment and the types of equipment used are different from
+            motorhome makes and model but generally a kitchen has a stovetop, oven, refrigerator, and sink.</p>
+          <p>The history of recreational camping is often traced back to Thomas Hiram Holding, a British travelling
+            tailor, but it was first popularised in the UK on the river Thames. By the 1880s large numbers of
+            visitors took part in the pastime, which was connected to the late Victorian craze for pleasure
+            boating. The early camping equipment was very heavy, so it was convenient to transport it by boat
+            or to use a craft that converted into a boat. Possibly the first commercial camping ground in the
+            world was Cunningham’s camp, near Douglas, Isle of Man, which opened in 1894</p>
+          <p>Although there is a plethora of information on camping and related things on internet, there are not
+            many easy-to-use applications available that bring together all the most important features and
+            information. It is for the reason Caravan Overloaded is created.
+            </p>
+       </div>
+       <!-- image not working for some reason -->
+       <div class="col-12 col-md-6">
+        <img src="{% static 'images/beach1.jpg' %}"/>
+         
+       </div>
+    </div>
+ </div>
+
 {%endblock%}

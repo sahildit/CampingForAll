@@ -3,6 +3,8 @@ from django.http import HttpResponse
 from django.template import loader
 from django.shortcuts import render
 from account.models import Account
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 def index(request):

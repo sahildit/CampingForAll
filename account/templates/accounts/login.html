@@ -39,7 +39,12 @@
 
 <form class="form-signin" method="post">
     {% csrf_token %}
+    <div class="column">
+      <img class ="mx-auto d-block" src="/static/images/logo.png" alt="image"/>
+    </div>
+
     <h1 class="h3 mb-3 fw-normal">Log in</h1>
+
     <label for="inputEmail" class="visually-hidden">Email address</label>
     <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
     <label for="inputPassword" class="visually-hidden">Password</label>

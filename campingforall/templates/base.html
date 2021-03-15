@@ -25,6 +25,7 @@
         <p class="h5 my-0 me-md-auto fw-normal">Camping Overload</p>
         <nav class="my-2 my-md-0 me-md-3">
             {% if request.user.is_authenticated %}
+            
             <a class="p-2" href="{% url 'index' %}">Home</a>
             <a class="p-2" href="{% url 'about' %}">About</a>
             <a class="p-2" href="{% url 'contact' %}">Contact</a>

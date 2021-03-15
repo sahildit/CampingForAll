@@ -4,36 +4,83 @@
 
 {%block content%}
 
-<div class="container">
-    <div class="column">
-        <img src="/static/images/beach1.jpg" alt="image"/>
+
+<style type="text/css">
+    @media(max-width: 768px){
+        .right-column{
+            margin-left: 0px;
+        }
+    }
+
+    @media(min-width: 768px){
+        .right-column{
+            margin-left: 20px;
+        }
+    }
+
+    .destination-container{
+        background-color: #fff;
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .create-dest{
+        background-color: #fff;
+        margin-top: 20px;
+    }
+
+    .left-column{
+        padding: 0px;
+    }
+
+    .right-column{
+        padding: 0px;
+    }
+
+
+
+
+</style>
+
+
+    <div class="container">
+        <div class="row">
+             <!-- thats the bar on the right hand side -->
+             <div class="create-dest d-lg-none col-lg-7 offset-lg-1">
+                 <!-- we using type of naming for url is becoj we created a secondary url file in this app -->
+                <a href="{% url 'destination:create' %}">Create destination</a>
+            </div>
+
+            <!-- main container which will display the destinations -->
+            <div class="left-column col-lg-7 offset-lg-1">
+                <div class="destination-container">
+                    <p>Thing</p>
+                </div>
+
+                <div class="destination-container">
+                    <p>Thing</p>
+                </div>
+
+                <div class="destination-container">
+                    <p>Thing</p>
+                </div>
+
+            </div>
+
+            <!-- this will be on the right hand side where any user can easily create any new destination if they wish -->
+            <div class="right-column col-lg-3 d-lg-flex d-none flex-column">
+                <div class="create-dest">
+                    <p>bla</p>
+                    <p>bla</p>
+                    <p>bla</p>
+                    <p>bla</p>
+                    <!-- we using type of naming for url is becoj we created a secondary url file in this app -->
+                    <a href="{% url 'destination:create' %}">Create destination</a>
+                </div>
+            </div>
+
+           
+        </div>
+
     </div>
-    <p></p>
-    <div class="row">
-            <div class="col-20 col-md-50 about_text animate__animated animate__fadeIn animate__slower">
-                <h2>What Campers should know about Camping in Ireland</h2>
-                <h2>Keep to the Left</h2>
-                <p>
-                    Depending on where you coming from, driving on the left side of the road might be an adjustment for everyone, and you will get in no time!
-                    Just remember to overtake on the right, drive in left lane and go clockwise.
-                </p>
-                
-                <h2>Don't Park on Yellow</h2>
-                <p>
-                    When you see a yellow line on the side of the road, know that it means no parking.
-                </p>
-
-                <h2>Get an Adaptor</h2>
-                <p>
-                    Irish Electricity runs at 220V, but all of them use British Plugs so make sure you have the right adaptor for your devices.
-                </p>
-
-                <p></p>
-                
-            </div> 
-    </div>
-
-
-</div>
-
 {%endblock content%}

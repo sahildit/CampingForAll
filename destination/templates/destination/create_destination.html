@@ -1,0 +1,56 @@
+{% extends 'base.html'%}
+
+{% block title%} destination {% endblock%}
+
+{%block content%}
+
+<style type="text/css">
+    .form{
+        width: 100%;
+        max-width: 330px;
+        padding: 15px;
+        margin: auto;
+    }
+    
+    .submit_button{
+        max-width: 198px;
+    }
+
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-7 offset-lg-1">
+            <form class="form" method="post" enctype="multipart/form-data">{% csrf_token %}
+                <div class="form-group">
+                    <label for="id_title">Title</label>
+                    <input class="form-control" type="text" name="title" id="id_title" required>
+
+                </div>
+                <p></p>
+                <p></p>
+                <div class="form-group">
+                    <label for="id_body">Description</label>
+                    <textarea class="form-control" rows="10" type="text" name="body" id="id_body" required>
+                    </textarea>
+
+                </div>
+                <p></p>
+                <p></p>
+
+                <div class="form-group">
+                    <label for="id_image">Image</label>
+                    <input type="file"  name="image" id="id_image" accept="image/*" required>
+
+                </div>
+
+                <p></p>
+                <p></p>
+
+                <button class="w-100 btn btn-lg btn-primary" type="submit">Post</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{%endblock content%}

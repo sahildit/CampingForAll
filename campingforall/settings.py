@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     #my new apps created by me
     'account',
     'destination',
+    'googlemap',
 
 
 

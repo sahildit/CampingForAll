@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
 from account.forms import RegistrationForm, AccAuthenticateForm, AccountUpdateForm
-
+from destination.models import BlogPost
 # Create your views here.
 
 def registration_view(request):
@@ -70,6 +70,11 @@ def account_view(request):
                 }
         )
     context['account_form'] = form
+# a variable which will store all of the posts into the system
+    campsites = BlogPost.objects.filter(author = request.user)
+    context['campsites'] = campsites
+
+
     return render(request, 'accounts/account.html',context)
 
 

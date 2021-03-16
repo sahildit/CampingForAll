@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from destination.models import BlogPost
 from destination.forms import CreateDestinationForm
 from account.models import Account
@@ -25,3 +25,12 @@ def create_destination_view(request):
 
 
     return render(request, "destination/create_destination.html", context)
+
+
+def description_view(request, slug):
+
+    context = {}
+    campsites = get_object_or_404(BlogPost, slug=slug)
+    context['campsites'] = campsites
+
+    return render(request, 'destination/description.html',context)

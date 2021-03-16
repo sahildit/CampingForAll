@@ -101,4 +101,24 @@
     <button type="submit">Update Changes</button>
 </form> -->
 
+<div class="container">
+    <div class="row">
+        <div class="campsites">
+            <h3>campsites</h3>
+            {% if campsites %}
+            <ul>
+                {% for post in campsites %}
+                    <a href="{% url 'destination:description' post.slug %}">
+                        <li class="list-group-item">{{post}}</li>
+                    </a>
+                {% endfor %}
+            </ul>
+            {% else %}
+                <p>No Campsites Displayed by this user <a href="{% url 'destination:create' %}">Here</a></p>
+            {% endif %}
+        </div>
+
+    </div>
+</div>
+
 {%endblock content%}

@@ -108,7 +108,7 @@
             {% if campsites %}
             <ul>
                 {% for post in campsites %}
-                    <a href="{% url 'destination:description' post.slug %}">
+                    <a href="{% url 'destination:description' post.slug %}" style="text-decoration: none;">
                         <li class="list-group-item">{{post}}</li>
                     </a>
                 {% endfor %}

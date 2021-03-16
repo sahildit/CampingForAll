@@ -39,6 +39,11 @@
         padding: 0px;
     }
 
+    .search-bar{
+        max-width: 500px;
+        width: 100%;
+    }
+
 
 
 
@@ -92,6 +97,15 @@
 
 <div class="container">
     <div class="row">
+
+        <!-- used for search bar -->
+        <div class="search-bar mt-sm-2 mr-2">
+            
+            <form method="get">
+                <input type="text" class="form-control" name="q" id="id_q" placeholder="Search.....">
+            </form>
+        </div>
+        
         <div class="left-column col-lg-7 offset-lg-1">
 
             <div class="d-lg-none mb-3">
@@ -103,11 +117,17 @@
                 </div>
             </div>
 
-            {% for post in campsites %}
+            {% if campsites %}
+                {% for post in campsites %}
+                    <div class="destination-container">
+                        {% include 'destination/snippets/campsites_snippet.html' with campsites=post %}
+                    </div>
+                {% endfor %}
+            {% else %}
                 <div class="destination-container">
-                    {% include 'destination/snippets/campsites_snippet.html' with campsites=post %}
+                    {% include 'destination/snippets/campsites_snippet.html' with query=query %}
                 </div>
-            {% endfor %}
+            {% endif %}
 
         </div>
 
@@ -126,6 +146,14 @@
     <div class=" text-center">
         <h2>&copy; Camping Overload | 2021</h2>
     </div>
-  </footer>
+</footer>
+
+<script type="text/javascript">
+    document.getElementById("id_q").value = "{{query}}"
+</script>
+
+
+
+
 
 {%endblock content%}

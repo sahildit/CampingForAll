@@ -8,10 +8,19 @@ from django.conf.urls.static import static
 from destination.models import BlogPost
 from operator import attrgetter
 
+from destination.views import destination_queryset
+# destination import destination_queryset
 
 def index(request):
     context = {}
-    campsites = sorted(BlogPost.objects.all(), key=attrgetter('date_updated'),reverse=True)
+
+#  used for searching in the home screen
+    query = ""
+    if request.GET:
+        query = request.GET['q']
+        context['query'] = str(query)
+
+    campsites = sorted(destination_queryset(query), key=attrgetter('date_updated'),reverse=True)
     context['campsites'] = campsites
 
     return render(request,'index.html',context)

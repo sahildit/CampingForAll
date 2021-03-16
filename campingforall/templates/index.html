@@ -1,5 +1,7 @@
 {% extends 'base.html'%}
 
+{% load static %}
+
 {% block title%} Home {% endblock%}
 
 {%block content%}
@@ -43,15 +45,15 @@
 </style>
 
 
-    <div class="container">
+    <!-- <div class="container">
         <div class="row">
-             <!-- thats the bar on the right hand side -->
+             thats the bar on the right hand side
              <div class="create-dest d-lg-none col-lg-7 offset-lg-1">
-                 <!-- we using type of naming for url is becoj we created a secondary url file in this app -->
+                 we using type of naming for url is becoj we created a secondary url file in this app
                 <a href="{% url 'destination:create' %}">Create destination</a>
             </div>
 
-            <!-- main container which will display the destinations -->
+            main container which will display the destinations
             <div class="left-column col-lg-7 offset-lg-1">
                 <div class="destination-container">
                     <p>Thing</p>
@@ -67,14 +69,14 @@
 
             </div>
 
-            <!-- this will be on the right hand side where any user can easily create any new destination if they wish -->
+            this will be on the right hand side where any user can easily create any new destination if they wish
             <div class="right-column col-lg-3 d-lg-flex d-none flex-column">
                 <div class="create-dest">
                     <p>bla</p>
                     <p>bla</p>
                     <p>bla</p>
                     <p>bla</p>
-                    <!-- we using type of naming for url is becoj we created a secondary url file in this app -->
+                    we using type of naming for url is becoj we created a secondary url file in this app
                     <a href="{% url 'destination:create' %}">Create destination</a>
                 </div>
             </div>
@@ -82,5 +84,48 @@
            
         </div>
 
+    </div> -->
+
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="left-column col-lg-7 offset-lg-1">
+
+            <div class="d-lg-none mb-3">
+                <div class="card m-auto d-flex flex-column p-3">
+                    <img class="img-fluid d-block m-auto pb-2" src="/static/images/logo.png" alt="image"/>
+                    <p>This is my Final year project which consists of python </p>
+                    <p class="m-auto"><a class="btn btn-primary" href="{% url 'destination:create' %}">Create Post</a></p>
+
+                </div>
+            </div>
+
+            {% for post in campsites %}
+                <div class="destination-container">
+                    {% include 'destination/snippets/campsites_snippet.html' with campsites=post %}
+                </div>
+            {% endfor %}
+
+        </div>
+
+        <div class="right-column col-lg-3 d-lg-flex d-none flex-column">
+            <div class="card create-dest d-flex flex-column p-3">
+                <img class="img-fluid d-block m-auto pb-2" src="/static/images/logo.png" alt="image"/>
+                <p>This is my Final year project which consists of python </p>
+                <p class="m-auto"><a class="btn btn-primary" href="{% url 'destination:create' %}">Create Post</a></p>
+            </div>
+        </div>
     </div>
+</div>
+<footer>
+    <hr>
+  
+    <div class=" text-center">
+        <h2>&copy; Camping Overload | 2021</h2>
+    </div>
+  </footer>
+
 {%endblock content%}

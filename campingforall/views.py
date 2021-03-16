@@ -5,10 +5,16 @@ from django.shortcuts import render
 from account.models import Account
 from django.conf import settings
 from django.conf.urls.static import static
+from destination.models import BlogPost
+from operator import attrgetter
 
 
 def index(request):
-    return render(request,'index.html')
+    context = {}
+    campsites = sorted(BlogPost.objects.all(), key=attrgetter('date_updated'),reverse=True)
+    context['campsites'] = campsites
+
+    return render(request,'index.html',context)
 
 def about(request):
     return render(request,'about.html')

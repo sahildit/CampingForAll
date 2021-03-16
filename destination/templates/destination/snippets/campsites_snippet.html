@@ -15,10 +15,7 @@
                     <h2 class="card-title">{{campsites.title}}</h2>
                 </a>
 
-                <!-- <p class="card-text">{{campsites.body}}</p>
-                {% if campsites.author == request.user %}
-                    <a href="{% url 'destination:edit' campsites.slug %}">Update</a>
-                {% endif %} -->
+                <p class="card-text">{{campsites.body|safe|truncatechars:180}}</p>
             </div>
         </div>
     </div>

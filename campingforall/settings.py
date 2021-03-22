@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'destination',
     'googlemap',
 
+    'crispy_forms',
+
 
 
     'django.contrib.admin',
@@ -111,6 +113,8 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
@@ -124,6 +128,8 @@ USE_L10N = True
 
 USE_TZ = True
 
+# used for map functionality
+GEOIP_PATH = os.path.join(BASE_DIR,'geoip')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/

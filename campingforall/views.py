@@ -9,6 +9,7 @@ from destination.models import BlogPost
 from operator import attrgetter
 
 from destination.views import destination_queryset
+from googlemap.views import Calc_dist_view
 # destination import destination_queryset
 
 def index(request):

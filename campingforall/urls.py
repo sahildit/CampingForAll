@@ -38,6 +38,8 @@ urlpatterns = [
     path('logout/', logout_view, name="logout"),
     path('login/', login_view, name="login"),
     path('account/', account_view, name="account"),
+    path('googlemap/', views.Calc_dist_view, name="googlemap"),
+
 
 
 

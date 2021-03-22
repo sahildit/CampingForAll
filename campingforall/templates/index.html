@@ -99,12 +99,14 @@
     <div class="row">
 
         <!-- used for search bar -->
-        <div class="search-bar mt-sm-2 mr-2">
+        <div class="search-bar col-lg-7 offset-lg-1">
             
             <form method="get">
                 <input type="text" class="form-control" name="q" id="id_q" placeholder="Search.....">
             </form>
         </div>
+
+       
         
         <div class="left-column col-lg-7 offset-lg-1">
 
@@ -151,9 +153,6 @@
 <script type="text/javascript">
     document.getElementById("id_q").value = "{{query}}"
 </script>
-
-
-
 
 
 {%endblock content%}

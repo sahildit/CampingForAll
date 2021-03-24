@@ -23,3 +23,18 @@ class UpdateDestinationForm(forms.ModelForm):
         if commit:
             campsites.save()
         return campsites
+
+
+
+# new model for comment and review for each destination post
+# new one
+
+# class NewCommentForm(forms.ModelForm):
+#     class Meta:
+#         model = Comment
+#         fields = ('name', 'email', 'content')
+#         widgets = {
+#             "name": forms.TextInput(attrs={"class": "col-sm-12"}),
+#             "email": forms.TextInput(attrs={"class": "col-sm-12"}),
+#             "content": forms.Textarea(attrs={"class": "form-control"}),
+#         }

@@ -1,0 +1,53 @@
+{% extends 'base.html'%}
+
+
+
+{% block title%} Weather {% endblock%}
+
+{%block content%}
+
+<style type="text/css">
+    .submit{
+        width: 100%;
+        max-width: 330px;
+        padding: 15px;
+        margin: auto;
+      }
+    
+    .container{
+        text-align: center;
+      }
+    
+    input[type='text']{
+        width: 50%;
+        border: 2px solid black;
+    }
+    
+         
+</style>
+
+<div class="container">
+    <h1> Whats the weather like?</h1>
+    <br>
+
+    <form method="GET">
+        <label for="city"></label>
+        <input class="h5 mb-3 fw-normal" type="text" name="city" id="city" placeholder="city.....">
+        <br>
+        <br>
+        <input class="w-50 btn btn-lg btn-primary" type="submit" value="submit">
+
+    </form>
+    {% if weather %}
+    <h3>
+        {{weather.country}}
+    </h3>
+
+    <h3>
+        {{weather.daytime}}
+    </h3>
+    {% endif %}
+
+</div>
+
+{%endblock content%}

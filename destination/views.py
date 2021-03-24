@@ -76,3 +76,10 @@ def destination_queryset(query=None):
     for post in posts:
         queryset.append(post)
     return list(set(queryset))
+
+
+
+
+# new model for comment and review for each destination post
+# new one
+

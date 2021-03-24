@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'googlemap',
 
     'crispy_forms',
+    'weather',
 
 
 

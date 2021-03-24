@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from weather.views import weatherview
 
 from . import views
 from account.views import (
@@ -39,6 +40,7 @@ urlpatterns = [
     path('login/', login_view, name="login"),
     path('account/', account_view, name="account"),
     path('googlemap/', views.Calc_dist_view, name="googlemap"),
+    path('weather/', weatherview, name="weather"),
 
 
 

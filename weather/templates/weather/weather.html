@@ -1,6 +1,6 @@
 {% extends 'base.html'%}
 
-
+{% load static %}
 
 {% block title%} Weather {% endblock%}
 
@@ -29,24 +29,30 @@
 <div class="container">
     <h1> Whats the weather like?</h1>
     <br>
-
-    <form method="GET">
-        <label for="city"></label>
-        <input class="h5 mb-3 fw-normal" type="text" name="city" id="city" placeholder="city.....">
-        <br>
-        <br>
-        <input class="w-50 btn btn-lg btn-primary" type="submit" value="submit">
-
-    </form>
-    {% if weather %}
-    <h3>
-        {{weather.country}}
-    </h3>
-
-    <h3>
-        {{weather.daytime}}
-    </h3>
-    {% endif %}
+        <form method="POST">
+            {% csrf_token %}
+    
+            <input type="text" class="h5 mb-3 fw-normal" type="text" name="city" placeholder="Choose Your City ...">
+                
+            <button type="submit" value="submit" class="w-50 btn btn-lg btn-primary">Search</button>                 
+            
+        <form>
+        <p></p>
+        <div class="row">
+            {% if temp and pressure and humidity %}
+            <div class="col d-flex justify-content-center">
+              <div class=" card text-white bg-dark mb-6">
+              <div class=" card-body">
+                <h4><span class="badge badge-primary">Temperature in Celsius :</span> {{temp}}</h4>
+                <h4><span class="badge badge-primary">Pressure :</span> {{pressure}} </h4>
+                <h4><span class="badge badge-primary">Humidity : </span> {{humidity}}</h4>
+                <h4><span class="badge badge-primary">Forecast : </span> {{main}} <img
+                    src="http://openweathermap.org/img/w/{{icon}}.png" alt="Image" style="width:70px"></h4>
+                <h4><span class="badge badge-primary">Description : </span> {{description}}</h4>
+              </div>
+              {% endif %}
+        </div>
+        
 
 </div>
 
